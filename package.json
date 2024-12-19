@@ -1,0 +1,26 @@
+{
+  "name": "lab1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bootstrap": "^5.2.3",
+    "crypto-js": "^4.1.1",
+    "electron": "^24.8.0",
+    "firebase-admin": "^11.5.0",
+    "jsonwebtoken": "^9.0.1",
+    "moment": "^2.29.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.3.2",
+    "sequelize": "^6.31.1",
+    "serialport": "^11.0.1"
+  }
+}
