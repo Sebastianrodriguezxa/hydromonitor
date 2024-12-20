@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" 
+  content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/main.css">
+
+  <!-- <title>Document</title> -->
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SECBI</a>
+        <div class="navbar-expand" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <button class="btn btn-secondary" id="logout">Salir</button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="d-flex align-items-start div-center">
+    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <button class="nav-link" id="mission" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Mision</button>
+      <button class="nav-link" id="access" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Acceso</button>
+      <button class="nav-link" id="sensors" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Sensores</button>
+      <button class="nav-link" id="users" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Usuarios</button>
+      <button class="nav-link" id="config" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Ajustes</button>
+    </div>
+
+    <div class="div-content">
+      <h1>Misiones</h1>
+
+      <div id="notify"></div>
+      <form class="row g-3 needs-validation mb-3" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Codigo</label>
+          <input type="text" class="form-control" id="codMission" required>
+          <div class="form-text" id="valid-feedback-cod-mission">
+            Por favor introduzca un codigo
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Nombre de la mision</label>
+          <input type="text" class="form-control" id="nameMission" required>
+          <div class="form-text" id="valid-feedback-name-mission">
+            Por favor introduzca un nombre
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit" id="createMission">Crear</button>
+        </div>
+      </form>
+
+
+      <div id="alert"></div>
+      <div class="div-content-mission">
+
+        <div class="list-card-mission" id="list-card-mission">
+        </div>
+
+        <div class="dontDisplay" id="view-measur">
+          <h2 id="count-measur">0</h2>
+          <div class="div-measur-buttons">
+            <button class="btn btn-primary" id="start">Iniciar</button>
+            <button class="btn btn-danger" id="stop">Detener</button>
+          </div>
+        
+          <table id="table-measur" class="table caption-top">
+            <caption id="measur">Mediciones</caption>
+            <thead>
+              <tr>
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">Fecha</th>
+                <th scope="col">Valor</th>
+                
+              </tr>
+            </thead>
+            <tbody id="table-body-measur">
+              <tr>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">Andres</div>
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">Felipe</div>
+      <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">...</div>
+      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">...</div>
+      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">...</div>
+    </div> -->
+  </div>
+
+  <dialog id="modal">
+    <h4 id="mission-modal"></h4>
+    <button class="btn btn-danger" id="close-modal">Cerrar</button>
+    <table id="table-modal" class="table caption-top">
+      <caption id="measur">Mediciones</caption>
+      <thead>
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">Fecha</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Sensor</th>
+          
+        </tr>
+      </thead>
+      <tbody id="table-body-modal">
+        <tr>
+        </tr>
+      </tbody>
+    </table>
+  </dialog>
+
+  <!-- <script src="../scripts/tabsMain.js"></script> -->
+  <script src="../../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- <script src="../scripts/alert2.js"></script> -->
+  <script src="../scripts/tabButtons.js"></script>
+  <script src="../scripts/notify.js"></script>
+  <script src="../scripts/validationInputs.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/logout.js"></script>
+  <script src="../scripts/countMeasurMain.js"></script>
+
+</body>
+
+</html>
